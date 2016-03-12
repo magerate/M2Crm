@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Pasasoft.Crm.Views" 
+             x:Class="Pasasoft.Crm.Pages.JobDetailPage">
+  <StackLayout Spacing="0">
+    <views:JobDetailHeaderView />
+    <TableView Intent="Menu" HasUnevenRows="true">
+      <TableRoot>
+        <TableSection Title="Details">
+          <ViewCell Height="250">
+            <StackLayout Spacing="0">
+              <views:ContactView />
+              <views:PhoneView />
+              <views:AddressView />
+            </StackLayout>
+          </ViewCell>
+        </TableSection>
+        <!--<TableSection Title="More">
+          <ImageCell
+          Text="{i18n:Translate Customers_Orders_Tab_Title}"
+          ImageSource="ProductsTab"
+          StyleId="disclosure"
+          Tapped="ProductsTabTapped" />
+          <ImageCell
+          Text="{i18n:Translate Customers_Sales_Tab_Title}"
+          ImageSource="SalesTab"
+          StyleId="disclosure"
+          Tapped="SalesTabTapped" />
+        </TableSection>-->
+      </TableRoot>
+    </TableView>
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:statics="clr-namespace:Pasasoft.Crm.Statics"
+             x:Class="Pasasoft.Crm.Views.ContactView">
+  <StackLayout Spacing="0" Padding="20,10">
+
+    <Label
+      Text="Contact"
+      FontAttributes="Bold"
+      FontSize="Medium"
+      LineBreakMode="TailTruncation">
+      <Label.TextColor>
+        <OnPlatform x:TypeArguments="Color"
+        iOS="{x:Static statics:Palette._003}"
+        Android="{x:Static statics:Palette._007}"
+        WinPhone="{x:Static statics:Palette._006}" />
+      </Label.TextColor>
+    </Label>
+
+    <Label
+      Text="John Boone"
+      TextColor="{x:Static statics:Palette._006}"
+      LineBreakMode="TailTruncation"/>
+
+    <Label
+		Text="Executive Associate"
+		TextColor="{x:Static statics:Palette._007}"
+		LineBreakMode="TailTruncation"/>
+
+  </StackLayout>
+</ContentView>
