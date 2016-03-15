@@ -23,11 +23,7 @@ namespace Pasasoft.Crm
         {
             Children.Add(new JobListPage());
            
-            Children.Add(new PlaceholderPage()
-            {
-                Title = "Customers",
-                Icon = new FileImageSource { File = "customers.png" },
-            });
+            Children.Add (new CustomerListPage ());
 
             Children.Add(new PlaceholderPage()
             {
