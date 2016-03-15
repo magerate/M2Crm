@@ -3,6 +3,7 @@
 using UIKit;
 using Foundation;
 
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 using Pasasoft.Crm;
@@ -29,7 +30,38 @@ namespace M2Crm.iOS
             LoadApplication(new App());
 
             ConfigureApplicationTheming();
+            CopySampleToDocmentPath ();
+
+            MessagingCenter.Subscribe<Page> (this, "ShareFez", ShareFez, null);
             return base.FinishedLaunching(app, options);
+        }
+
+        private void ShareFez(Page page)
+        {
+            var dstPath = System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments), "sample.fez");
+            var url = new NSUrl (dstPath);
+
+            var item = NSObject.FromObject (url);
+            var activityItems = new[] { item }; 
+            var activityController = new UIActivityViewController (activityItems, null);
+
+            var topController = UIApplication.SharedApplication.KeyWindow.RootViewController;
+
+            while (topController.PresentedViewController != null) {
+                topController = topController.PresentedViewController;
+            }
+
+            topController.PresentViewController (activityController, true, null);
+        }
+
+        private void CopySampleToDocmentPath()
+        {
+            var path = NSBundle.MainBundle.PathForResource ("SampleDiagram.fez", null);
+            var dstPath = System.IO.Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments), "sample.fez");
+            if (!System.IO.File.Exists (dstPath))
+            {
+                System.IO.File.Copy (path, dstPath);
+            }
         }
 
         private void ConfigureApplicationTheming()

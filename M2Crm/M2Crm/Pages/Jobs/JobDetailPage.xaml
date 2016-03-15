@@ -16,18 +16,18 @@
             </StackLayout>
           </ViewCell>
         </TableSection>
-        <!--<TableSection Title="More">
+        <TableSection Title="More">
           <ImageCell
-          Text="{i18n:Translate Customers_Orders_Tab_Title}"
+          Text="Diagrams"
           ImageSource="ProductsTab"
           StyleId="disclosure"
-          Tapped="ProductsTabTapped" />
+          Tapped="DiagramTabTapped" />
           <ImageCell
-          Text="{i18n:Translate Customers_Sales_Tab_Title}"
+          Text="Orders"
           ImageSource="SalesTab"
           StyleId="disclosure"
-          Tapped="SalesTabTapped" />
-        </TableSection>-->
+          />
+        </TableSection>
       </TableRoot>
     </TableView>
   </StackLayout>

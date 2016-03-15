@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 using Xamarin.Forms;
 
 using Pasasoft.Crm.ViewModels;
@@ -18,6 +19,12 @@ namespace Pasasoft.Crm.Pages
         {
             base.OnBindingContextChanged();
             Title = JobViewModel.Job.Name;
+        }
+
+        private void DiagramTabTapped(object sender,EventArgs e)
+        {
+            var page = new DiagramDetailPage ();
+            Navigation.PushAsync (page);
         }
     }
 }
